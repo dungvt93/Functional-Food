@@ -67,8 +67,13 @@
 						<input type="text" name="s" id="s" value="Search ..." onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;"/>
 					<div class="select-type">	
 						<select id="post_type" name="post_type">
+<<<<<<< HEAD
 							<option value="products">Products</option>
 							<option value="post">Blog</option>
+=======
+							<option value="post">Blog</option>
+							<option value="products">Products</option>
+>>>>>>> 4bab8e39339b980a6def4385aca4a70940e8782c
 						</select>
 					</div>
 						<input type="submit" id="searchsubmit" value="Search" />
