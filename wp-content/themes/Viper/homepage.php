@@ -43,7 +43,7 @@ get_header(); ?>
 				
 								<div class="flex-caption">
 								
-									<h3><?php the_title(); ?> - <?php echo get_post_meta($post->ID,'_product_info_product_price', true); ?></h3>   
+									<h3><?php the_title(); ?> - <?php do_shortcode("[price asin='".get_post_meta($post->ID,'_product_info_product_price', true)."']"); ?> </h3>
 									<p><?php echo get_post_meta($post->ID,'_product_info_product_description', true); ?></p>
 								</div>
 						<?php endwhile; endif; ?>
