@@ -98,7 +98,7 @@ get_header(); ?>
 				<div class="prod-info">
 					<div class="pricebar cf"> 
 						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-						<span class="pricetag"><?php getAmazonPrice("ap-northeast-1","B00KQ7SBTE")?></span>
+						<span class="pricetag"><?php getAmazonPrice("com","B00KQ7SBTE")?></span>
 					</div>
 					
 					<p> <?php echo get_post_meta($post->ID,'_product_info_product_description', true); ?> </p>
