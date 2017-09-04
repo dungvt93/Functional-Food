@@ -161,8 +161,8 @@ function price_handler($atts) {
     {
         echo $e->getMessage();
     }
-    echo '<pre>';
-    print_r($result->Items->Item);
+//    echo '<pre>';
+//    print_r($result->Items->Item);
     $price = $result->Items->Item->OfferSummary->LowestNewPrice->Amount;
     $MSRP = $result->Items->Item->ItemAttributes->ListPrice->Amount;
     
@@ -173,18 +173,18 @@ function price_handler($atts) {
     }
     $price = number_format($price /100,2);
     echo '<p>';
-    if(!empty($price) && !empty($MSRP))
-    {
-         echo 'Retail Price: '.$MSRP2.'<br>';
-         echo 'Lowest Price: '.$price.'<br>';
-         $MSRP2 = number_format($MSRP /100,2);
-         $percent = ($Savings/$MSRP2);
-         echo 'Saveing Percent: '.number_format($percent,2).'%<br>';
-    }
-    elseif(!empty($price) && empty($MSRP))
-    {
+//    if(!empty($price) && !empty($MSRP))
+//    {
+//         echo 'Retail Price: '.$MSRP2.'<br>';
+//         echo 'Lowest Price: '.$price.'<br>';
+//         $MSRP2 = number_format($MSRP /100,2);
+//         $percent = ($Savings/$MSRP2);
+//         echo 'Saveing Percent: '.number_format($percent,2).'%<br>';
+//    }
+//    elseif(!empty($price) && empty($MSRP))
+//    {
         echo 'Price: '.$price.'<br>';
-    }
+//    }
     echo '</p>';
     
 }
