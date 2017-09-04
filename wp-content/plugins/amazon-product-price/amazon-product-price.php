@@ -161,8 +161,8 @@ function price_handler($atts) {
     {
         echo $e->getMessage();
     }
-//    echo '<pre>';
-//    print_r($result->Items->Item);
+    echo '<pre>';
+    print_r($result->Items->Item);
     $price = $result->Items->Item->OfferSummary->LowestNewPrice->Amount;
     $MSRP = $result->Items->Item->ItemAttributes->ListPrice->Amount;
     
