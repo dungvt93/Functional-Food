@@ -183,7 +183,7 @@ function price_handler($atts) {
 //    }
 //    elseif(!empty($price) && empty($MSRP))
 //    {
-        echo $price;
+        echo '$'.$price;
 //    }
 //    echo '</p>';
     
