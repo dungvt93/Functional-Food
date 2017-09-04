@@ -172,7 +172,7 @@ function price_handler($atts) {
         $MSRP2 = number_format($MSRP /100,2);
     }
     $price = number_format($price /100,2);
-    echo '<p>';
+//    echo '<p>';
 //    if(!empty($price) && !empty($MSRP))
 //    {
 //         echo 'Retail Price: '.$MSRP2.'<br>';
@@ -183,9 +183,9 @@ function price_handler($atts) {
 //    }
 //    elseif(!empty($price) && empty($MSRP))
 //    {
-        echo 'Price: '.$price.'<br>';
+        echo $price;
 //    }
-    echo '</p>';
+//    echo '</p>';
     
 }
 
