@@ -58,5 +58,4 @@
 
 		<?php edit_post_link( __( 'Edit', 'web2feel' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
-    <embed wmode="transparent" src="https://www.xatech.com/web_gear/chat/chat.swf" quality="high" width="540" height="405" name="chat" FlashVars="id=219562388" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="https://xat.com/update_flash.php" /><br><small><a target="_BLANK" href="https://xat.com/web_gear/?cb">Get your own Chat Box!</a> <a target="_BLANK" href="https://xat.com/web_gear/chat/go_large.php?id=219562388">Go Large!</a></small><br>
 </article><!-- #post-<?php the_ID(); ?> -->
