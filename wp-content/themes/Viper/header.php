@@ -44,8 +44,20 @@
 </head>
 
 <body <?php body_class(); ?>>
+
 <div id="page" class="hfeed site wrapper">
-<div class="container_12">
+    <div id="page" class="hfeed site wrapper">
+        <!-- Global Site Tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106908035-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)};
+            gtag('js', new Date());
+
+            gtag('config', 'UA-106908035-1');
+        </script>
+
+    <div class="container_12">
 	<header id="masthead" class="site-header cf" role="banner">
 	
 			<div class="top grid_12 cf ">
