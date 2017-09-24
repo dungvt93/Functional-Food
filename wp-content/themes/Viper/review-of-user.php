@@ -15,20 +15,22 @@ Template Name: Review Of User
 */
 get_header(); ?>
 
-		<div id="primary" class="content-area grid_9">
-			<div id="content" class="site-content " role="main">
+    <div id="primary" class="content-area grid_9">
+        <div id="content" class="site-content " role="main">
 
-                <?php
-                $args = array( 'category' => 11, 'post_type' =>  'post' );
-                $postslist = get_posts( $args );
-                foreach ($postslist as $post) :  setup_postdata($post);
-                    ?>
-                    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                    <?php the_excerpt(); ?>
-                <?php endforeach; ?>
+            <?php
+            $args = array('category' => 7, 'post_type' => 'post');
+            $postslist = get_posts($args);
+            foreach ($postslist as $post) : setup_postdata($post);
+            ?>
+                <?php get_template_part('content', 'page'); ?>
 
-            </div><!-- #content .site-content -->
-		</div><!-- #primary .content-area -->
+                <?php comments_template('', true); ?>
+            <?php endforeach; ?>
+
+
+        </div><!-- #content .site-content -->
+    </div><!-- #primary .content-area -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
