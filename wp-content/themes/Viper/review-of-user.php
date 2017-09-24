@@ -19,7 +19,7 @@ get_header(); ?>
 			<div id="content" class="site-content " role="main">
 
                 <?php
-                $args = array( 'category' => 7, 'post_type' =>  'post' );
+                $args = array( 'category' => 11, 'post_type' =>  'post' );
                 $postslist = get_posts( $args );
                 foreach ($postslist as $post) :  setup_postdata($post);
                     ?>
