@@ -42,6 +42,6 @@ get_header(); ?>
 
 			</div><!-- #content .site-content -->
 		</div><!-- #primary .content-area -->
-
+dfasdf
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
