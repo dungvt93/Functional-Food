@@ -23,7 +23,7 @@ get_header(); ?>
             $postslist = get_posts($args);
             foreach ($postslist as $post) : setup_postdata($post);
             ?>
-                <?php get_template_part('content', 'page'); ?>
+                <?php get_template_part('content'); ?>
 
                 <?php comments_template('', true); ?>
                 
