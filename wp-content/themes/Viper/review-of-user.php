@@ -10,7 +10,9 @@
  * @package web2feel
  * @since web2feel 1.0
  */
-
+/*
+Template Name: Review Of User
+*/
 get_header(); ?>
 
 		<div id="primary" class="content-area grid_9">
