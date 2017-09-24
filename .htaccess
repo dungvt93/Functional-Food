@@ -15,3 +15,14 @@ RewriteRule ^locations.kml$ /index.php?sitemap=wpseo_local_kml [L]
 RewriteRule ^geo_sitemap.xml$ /index.php?sitemap=geo [L]
 RewriteRule ^([^/]+?)-sitemap([0-9]+)?.xml$ /index.php?sitemap=$1&sitemap_n=$2 [L]
 RewriteRule ^([a-z]+)?-?sitemap.xsl$ /index.php?xsl=$1 [L]
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
