@@ -24,10 +24,6 @@ get_header(); ?>
             foreach ($postslist as $post) : setup_postdata($post);
             ?>
                 <?php get_template_part('content'); ?>
-
-                <?php comments_template('', true); ?>
-                
-                <?php the_excerpt(); ?>
             <?php endforeach; ?>
 
 
