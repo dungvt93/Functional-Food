@@ -10,6 +10,8 @@
 	<div class="product-single-top cf">
 		<div class="prod-image">
 					<?php
+                    $post_type = get_post_type( $post->ID );
+                    echo $post_type;
 						$thumb = get_post_thumbnail_id();
 						$img_url = wp_get_attachment_url( $thumb,'full' ); //get full URL to image (use "large" or "medium" if the images too big)
 						$image = aq_resize( $img_url, 220, 180, false ); //resize & crop the image
