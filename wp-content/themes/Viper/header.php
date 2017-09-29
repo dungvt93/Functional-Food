@@ -21,7 +21,7 @@
 	wp_title( '|', true, 'right' );
 
 	// Add the blog name.
-	bloginfo( 'name' );
+	//bloginfo( 'name' );
 
 	// Add the blog description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
@@ -80,7 +80,7 @@
 					<div class="select-type">	
 						<select id="post_type" name="post_type">
 							<option value="products">Products</option>
-							<option value="post">Blog</option>
+							<option value="post">News</option>
 						</select>
 					</div>
 						<input type="submit" id="searchsubmit" value="Search" />
