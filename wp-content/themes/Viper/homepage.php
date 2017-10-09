@@ -59,9 +59,9 @@ get_header(); ?>
         <div id="banner-block">
             <!--			<div class="head-banner">	-->
             <?php //echo ft_of_get_option('fabthemes_off_banner');	?><!--	</div>-->
-                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbestfoodhealth%2F&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=561129747373393"
-                        width="-webkit-fill-available" height="-webkit-fill-available" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-                        allowTransparency="true"></iframe>
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbestfoodhealth%2F&tabs=timeline&width=340&height=360&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=561129747373393"
+                    width="340" height="360" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                    allowTransparency="true"></iframe>
         </div>
 
     </div>
