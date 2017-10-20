@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VwcGVFJTGwIFVFBUAQMP"};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,n,e)])}catch(s){try{i("ierr",[s,c.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t){i("err",[t,c.now()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,n,e){u&&(d+=1)}),s.on("fn-err",function(t,n,e){u&&(this.thrown=!0,o(e))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="referrer" content="always">
+    <meta name="referrer" content="unsafe-url">
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="//iface.brightside.me/@/BrightSide/Layouts/i/apple-icon.png" />
+    <meta name="p:domain_verify" content="31bf414ec9ea42e9c2a81851e825dafb"/>
+
+
+    <meta property="facebook_app_id" content="381091015394947" />
+    <meta property="fb:app_id" content="381091015394947" />
+    <meta property="fb:pages" content="727974550664624"/>
+
+<title>There Is Only One Thing That Influences Your Weight</title><meta name="description" content="Life is too short to be spent on diets." />
+<meta name="keywords" content="Inspiration. Creativity. Wonder." />
+<meta property="og:title" content="There Is Only One Thing That Influences Your Weight" />
+<meta property="og:image" content="https://files.brightside.me/files/news/part_35/356210/preview-15176310-1200x630-99-1500888149.jpg" />
+<meta property="og:description" content="Life is too short to be spent on diets." />
+<meta property="og:url" content="https://brightside.me/inspiration-health/there-is-only-one-thing-that-influences-your-weight-356210/" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="BrightSide — Inspiration. Creativity. Wonder." />
+<meta property="article:publisher" content="https://www.facebook.com/brightside" />
+<meta property="article:author" content="https://www.facebook.com/brightside" />
+<meta property="article:published_time" content="2017-07-24T18:30:00+0300" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://brightside.me/inspiration-health/there-is-only-one-thing-that-influences-your-weight-356210/" />
+<meta property="twitter:title" content="There Is Only One Thing That Influences Your Weight" />
+<meta property="twitter:description" content="Life is too short to be spent on diets." />
+<meta property="twitter:image" content="https://files.brightside.me/files/news/part_35/356210/preview-15176310-1200x630-99-1500888149.jpg" />
+<meta property="twitter:image:width" content="1200" />
+<meta property="twitter:image:height" content="630" />
+<meta property="twitter:site" content="bright_side_me" />
+<meta property="al:ios:url" content="brightside://articles/356210" />
+<meta property="al:ios:app_store_id" content="1088344852" />
+<meta property="al:ios:app_name" content="BrightSide — Let's make the world a little brighter" />
+<meta property="al:web:url" content="https://brightside.me/inspiration-health/there-is-only-one-thing-that-influences-your-weight-356210/" />
+<meta property="twitter:app:url:iphone" content="brightside://articles/356210" />
+<meta property="twitter:app:id:iphone" content="1088344852" />
+<meta property="twitter:app:name:iphone" content="BrightSide — Let's make the world a little brighter" />
+<meta property="twitter:app:url:ipad" content="brightside://articles/356210" />
+<meta property="twitter:app:id:ipad" content="1088344852" />
+<meta property="twitter:app:name:ipad" content="BrightSide — Let's make the world a little brighter" /><link href="https://brightside.me/inspiration-health/there-is-only-one-thing-that-influences-your-weight-356210/amp/" rel="amphtml" />
+    	<link href="//iface.brightside.me/assets/styles-common-bf905f21ae93649d8a6b637b784534d95b3158de.css" rel="stylesheet" type="text/css" />
+	
+<!--[if lte IE 8.0]>
+    	<link href="//iface.brightside.me/assets/styles-common-IE-bf905f21ae93649d8a6b637b784534d95b3158de.css" rel="stylesheet" type="text/css" />
+	<![endif]-->            <script src="//www.google-analytics.com/cx/api.js?experiment=QmHUV46wTDGynWz-ZET2vA"></script>
+
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', {
+        trackingId: 'UA-65516416-1',
+        cookieDomain: 'none',
+        allowLinker: true
+    });
+
+        var gaExpId = 'QmHUV46wTDGynWz-ZET2vA';
+        var gaExpVar = cxApi.chooseVariation();
+        ga('set', 'expId', gaExpId);
+    ga('set', 'expVar', gaExpVar);
+    
+
+    
+    
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+<!--finteza test-->
+    <script type='text/javascript'>
+        var fcoreobj=fcoreobj||{};fcoreobj.act=fcoreobj.act||[];
+        !function(){if(!fcoreobj.inited){var e,t;(e=document.createElement("script")).async=!0,e.defer=!0,e.type="text/javascript",e.src="https://content.mql5.com/core.js",(t=document.getElementsByTagName("script")[0])&&t.parentNode&&t.parentNode.insertBefore(e,t),fcoreobj.inited=!0}}();
+        fcoreobj.act.push(function(){fcoreobj.lead('egbycdlwjbdieeqlgxltffigeibusyflvb');});
+    </script>
+<!--end finteza test-->    
+<!--[if lte IE 8.0]>
+<script type="text/javascript" src="//iface.brightside.me/@/AdMeCommon/Layouts/js/elements.js"></script>
+<![endif]-->
+
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script type="text/javascript" src="//iface.brightside.me/@/AdMeCommon/Layouts/js/prebid-sovnr.js" async="async"></script>
+<script>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+
+    var pbjs = pbjs || {};
+    pbjs.que = pbjs.que || [];
+</script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+        dataLayer.push({"experiments":{"segment":18,"pixel":"https:\/\/webstats.thesoul-publishing.com\/track\/p.gif"},"webstats":{"project":3,"pixel":"https:\/\/webstats.thesoul-publishing.com\/track\/ws.gif"}});
+    </script>
+<script>
+
+    var TSP = {
+        DFP: {
+            networkId: '47947404',
+            prebid: {
+                bids: [
+                    { bidder: 'sovrn', params: { tagid: '489582' } }
+                ],
+                sendAdserverRequest: function() {
+                    if (!pbjs.adserverRequestSent) {
+                        pbjs.adserverRequestSent = true;
+                        googletag.cmd.push(function() {
+                            pbjs.que.push(function() {
+                                pbjs.setTargetingForGPTAsync();
+                            });
+                        });
+                    }
+                },
+                getNewPrebidSlot: function (slotTrg, sizes, divId){
+                    pbjs.que.push(function() {
+                        pbjs.addAdUnits([{code: divId, sizes: sizes, bids: TSP.DFP.prebid.bids }]);
+                        pbjs.requestBids({ bidsBackHandler: TSP.DFP.prebid.sendAdserverRequest });
+                    });
+
+                    return TSP.DFP.getNewSlot(slotTrg, sizes, divId);
+                }
+            },
+            triggeredSlots: {
+                csEnded: {}
+            },
+            tags: {},
+            getSizes: function (slot) {
+                var sizes = [];
+
+                for (var i = 0; i < slot.getSizes().length; i++) {
+                    if (typeof slot.getSizes()[i] === 'object') {
+                        sizes.push([slot.getSizes()[i].getWidth(), slot.getSizes()[i].getHeight()]);
+                    } else if (typeof slot.getSizes()[i] === 'string') {
+                        sizes.push([slot.getSizes()[i]]);
+                    }
+                }
+
+                return sizes;
+            },
+            getSlotTrg: function (slot) {
+                return slot.getTargetingMap();
+            },
+            getSlotByFrameId: function(frameId){
+                return googletag.pubads().getSlots().reduce(function(result, slot){
+                    return result === null ? frameId.indexOf(slot.getSlotId().getId()) > 0 ? slot : null : result;
+                }, null);
+            },
+            Switch: function (windowFrameId) {
+                var slot = TSP.DFP.getSlotByFrameId(windowFrameId);
+                if (slot) {
+                    var sizes = TSP.DFP.getSizes(slot);
+                    var slotTrg = TSP.DFP.getSlotTrg(slot);
+                    var divId = slot.getSlotElementId();
+
+                    TSP.DFP.continueCs(divId, sizes, slotTrg, slot);
+                }
+                return;
+            },
+            getNewSlot: function (slotTrg, sizes, divId){
+                var suffix = slotTrg.cs_level_max.toString() == 1 ? '' : '-x' + slotTrg.cs_level.toString();
+                var newSlot = googletag.defineSlot('/' + TSP.DFP.networkId + '/' + slotTrg.cs_name.toString() + suffix, sizes, divId)
+                    .setTargeting("cs_slot_index", [slotTrg.cs_slot_index.toString()])
+                    .setTargeting("cs_name", [slotTrg.cs_name.toString()])
+                    .setTargeting("cs_level", [slotTrg.cs_level.toString()])
+                    .setTargeting("cs_level_max", [slotTrg.cs_level_max.toString()])
+                    .addService(googletag.pubads());
+
+                return newSlot;
+            },
+            removeSlot: function(slot, hide){
+                var elem = document.getElementById(slot.getSlotElementId()),
+                    slotTrg = TSP.DFP.getSlotTrg(slot);
+                elem.setAttribute('data-level', slotTrg.cs_level[0]);
+                elem.setAttribute('data-slot-index', slotTrg.cs_slot_index[0]);
+                elem.setAttribute('data-slot-num', slot.getSlotId().getInstance());
+
+                googletag.pubads().clear([slot]);
+                googletag.destroySlots([slot]);
+
+                if(hide){
+                    elem.style.display = "none";
+                    elem.style.width = "0px";
+                }
+            },
+            startScrollDependentCs: function(name, divId, sizes, slotIndex, lvl, maxLvl, delay) {
+                googletag.cmd.push(function () {
+
+                    var div = document.getElementById(divId);
+                    if (! div) {
+                        return;
+                    }
+
+                    div.parentNode.setAttribute('data-state', 'started');
+
+                    var distance = parseInt(Math.max(document.documentElement.clientHeight, window.innerHeight || 900) * 1.5);
+                    var rendered = false;
+
+                    var bottomLine = function () {
+                        return Math.max(document.documentElement.clientHeight, window.innerHeight || 0) + (window.scrollY || window.pageYOffset);
+                    };
+
+                    function render() {
+                        rendered = true;
+
+                        setTimeout(function() {
+                            var slot = TSP.DFP.getNewSlot({
+                                cs_slot_index: [slotIndex.toString()],
+                                cs_name: [name.toString()],
+                                cs_level: [lvl.toString()],
+                                cs_level_max: [maxLvl.toString()]
+                            }, sizes, divId);
+
+                            googletag.display(divId);
+                            googletag.pubads().refresh([slot]);
+                        }, delay);
+                    }
+
+                    var checkScrollPosition = function () {
+                        if (bottomLine() + distance >= div.offsetTop && !rendered) {
+                            render();
+                            window.removeEventListener('scroll', checkScrollPosition);
+                        }
+                    };
+
+                    if (bottomLine() + distance >= div.offsetTop) {
+                        render();
+                    } else {
+                        window.addEventListener('scroll', checkScrollPosition);
+                    }
+                });
+            },
+            continueCs: function(divId, sizes, slotTrg, oldSlot) {
+                if (parseInt(slotTrg.cs_level_max[0]) > 1 && parseInt(slotTrg.cs_level[0]) < parseInt(slotTrg.cs_level_max[0])) {
+                    // destroy old slot to use the div again
+                    TSP.DFP.removeSlot(oldSlot);
+
+                    var nextLvl = parseInt(slotTrg.cs_level[0]) + 1;
+                    slotTrg.cs_level[0] = nextLvl.toString();
+
+                    var newSlot = TSP.DFP.getNewSlot(slotTrg, sizes, divId);
+                    googletag.display(divId);
+                    googletag.pubads().refresh([newSlot]);
+
+                } else {
+                    Object.keys(TSP.DFP.triggeredSlots.csEnded).forEach(function (trSlotKey) {
+                        var args = { action: 'cs-ended', divId: divId, sizes: sizes, slotTrg: slotTrg, oldSlot: oldSlot };
+                        var trSlot = TSP.DFP.triggeredSlots.csEnded[trSlotKey];
+                        if (trSlot.trigger && trSlot.trigger(args)) {
+                            trSlot.action(args);
+                            if (trSlot.removing && trSlot.removing(args)) {
+                                delete TSP.DFP.triggeredSlots.csEnded[trSlotKey];
+                            }
+                        }
+                    });
+
+                    TSP.DFP.removeSlot(oldSlot, true);
+                }
+            },
+            slotListener: function (event) {
+                var divId = event.slot.getSlotElementId();
+                var sizes = TSP.DFP.getSizes(event.slot);
+                var slotTrg = TSP.DFP.getSlotTrg(event.slot);
+
+                if (event.isEmpty) {
+                    TSP.DFP.continueCs(divId, sizes, slotTrg, event.slot);
+                } else {
+                    // we have an ad, we may send an event to GA for example.
+                    var divElem = document.getElementById(divId);
+                    divElem.parentNode.setAttribute('data-state', 'rendered');
+
+                    var slotNum = event.slot.getSlotId().getInstance();
+
+                    var frame = divElem.firstElementChild.firstElementChild;
+                    frame.addEventListener('load', function(){
+                        this.contentWindow.postMessage('{"namespace":"AdMeGroup", "action":"setId", "id":"' + frame.id + '", "num":"' + slotNum + '"}', '*');
+                    });
+                }
+            },
+            messageListener: function(event) {
+                var data;
+                try {
+                    data = event.data.substring(0, 35);
+                } catch (ex){
+                    data = null;
+                }
+
+                if(event.origin == "https://tpc.googlesyndication.com" && data == '{"namespace":"AdMeGroup", "action":'){
+                    try {
+                        data = JSON.parse(event.data.toString());
+                    } catch (ex){
+                        data = null;
+                    }
+
+                    if(data && data.namespace == 'AdMeGroup' && data.action) {
+
+                        if(TSP.DFP.messageListeners[data.action]){
+                            TSP.DFP.messageListeners[data.action](data);
+                        }
+                    }
+                }
+            },
+            messageListeners: {
+                continueCs: function(data){
+                    window.TSP.DFP.Switch(data.id);
+                },
+                resize: function(data){
+                    var slot = TSP.DFP.getSlotByFrameId(data.id).getSlotElementId();
+                    slot = document.getElementById(slot);
+
+                    [null, 'firstElementChild', 'firstElementChild'].reduce(function(elem, key){
+                        elem = key ? elem[key] : elem;
+                        if(data.mode == 'style'){
+                            if(data.width || data.width === 0) {
+                                elem.style.width = data.width;
+                            }
+                            if(data.height || data.height === 0) {
+                                elem.style.height = data.height;
+                            }
+                        } else {
+                            if(data.width || data.width === 0) {
+                                elem.width = data.width;
+                            }
+                            if(data.height || data.height === 0) {
+                                elem.height = data.height;
+                            }
+                        }
+
+                        return elem;
+                    }, slot);
+                }
+            }
+        }
+    };
+
+    window.TSP = TSP;
+
+    googletag.cmd.push(function() {
+
+        googletag.pubads().enableSingleRequest();
+        googletag.pubads().disableInitialLoad();
+                googletag.pubads().setTargeting("p","brightside");
+                googletag.pubads().setTargeting("aid","brightside_356210");
+                googletag.pubads().setTargeting("arname","brightside_Health");
+                googletag.pubads().setTargeting("agname","brightside_Inspiration");
+        
+        if (window.location.href.indexOf('utm_source=fb_r') > 0) {
+            googletag.pubads().setTargeting("fbr","true");
+        }
+
+        googletag.pubads().addEventListener('slotRenderEnded', window.TSP.DFP.slotListener);
+        googletag.pubads().collapseEmptyDivs(true);
+        googletag.pubads().setCentering(true);
+        googletag.enableServices();
+
+        window.addEventListener("message", TSP.DFP.messageListener);
+        setTimeout(TSP.DFP.prebid.sendAdserverRequest, 700);
+    });
+</script>    <script type="text/javascript">
+    TSP.DFP.tags.teads = function(frameId, pid, lang, mobile, selector) {
+        var elem = document.getElementById(frameId);
+        elem.contentWindow.location = 'about:blank';
+        elem.parentElement.parentElement.style.height = "inherit";
+        elem.style.width = "100%";
+        elem.style.height = "0px";
+
+        selector = !selector ? '#' + elem.parentElement.id : selector;
+        selector = selector.replace(/\//g, '\\$&');
+        var needLib = !window._ttf;
+
+        window._ttf = window._ttf || [];
+        window._ttf.push({
+            pid: pid,
+            lang: lang,
+            slot: selector,
+            format: 'inread',
+            mobile: mobile,
+            minSlot: 1,
+            components: {skip: {delay: 0}},
+            mutable: true,
+            css: "padding: 0px 0px 16px;",
+            passBack: function() {
+                TSP.DFP.Switch(frameId);
+            }
+        });
+
+        if(needLib) {
+            var js = document.createElement('script'),
+                s = document.getElementsByTagName('script')[0];
+            js.type = "text/javascript";
+            js.async = true;
+            js.src = '//cdn.teads.tv/media/format.js';
+            s.parentNode.insertBefore(js, s);
+        }
+    };
+</script><script type="text/javascript">
+    TSP.DFP.tags.seedr = function(frameId, gid, divId) {
+        var elem = document.getElementById(frameId);
+        elem.contentWindow.location = 'about:blank';
+        elem.parentElement.parentElement.style.width = "100%";
+        elem.parentElement.parentElement.style.height = "inherit";
+        elem.style.width = "100%";
+        elem.style.height = "0px";
+
+        divId = !divId ? elem.parentElement : document.getElementById(divId);
+
+        if(!window.SeedrPlayer) {
+            (function (a, b, c, d, e, f, g, h) {
+                g = b.createElement(c);
+                g.src = d;
+                g.type = "application/javascript";
+                g.async = true;
+                g.onload = showAd;
+                h = b.getElementsByTagName(c)[0];
+                h.parentNode.insertBefore(g, h);
+                a[f] = [];
+                a[e] = function () {
+                    a[f].push(Array.prototype.slice.apply(arguments));
+                }
+            })(window, document, "script", (document.location.protocol ===
+                "https:" ? "https:" : "http:") + "//cdn01.nativeroll.tv/js/seedr-player.min.js",
+                "SeedrPlayer", "seedrInit"
+            );
+        } else {
+            showAd();
+        }
+
+        function showAd() {
+            SeedrPlayer(divId, 50, {
+                gid: gid, onError: function() {
+                    TSP.DFP.Switch(frameId);
+                }
+            });
+        }
+    };
+</script><script type="text/javascript">
+    TSP.DFP.tags.vengovision = function(frameId, siteId, divId) {
+        var elem = document.getElementById(frameId);
+        elem.contentWindow.location = 'about:blank';
+        elem.parentElement.parentElement.style.height = "inherit";
+        elem.style.width = "100%";
+        elem.style.height = "0px";
+
+        divId = !divId ? elem.parentElement.id : divId;
+
+        if (!window.VengoVision) {
+            (function (d) {
+                var js = d.createElement('script'),
+                    s = d.getElementsByTagName('script')[0];
+                js.type = "text/javascript";
+                js.async = true;
+                js.src = '//s.vengovision.ru/js/vengovision.min.js';
+                js.onload = showAd;
+                s.parentNode.insertBefore(js, s);
+            })(window.document);
+        } else {
+            showAd();
+        }
+
+        function showAd() {
+            VengoVision.init({
+                siteId: siteId,
+                logLevel: 'info'
+            });
+
+            VengoVision.showAd({
+                adType: 'topline',
+                allowAnimation: true,
+                parentId: divId,
+                volumeControl: 'mouse'
+            }).on('onError', function () {
+                TSP.DFP.Switch(frameId);
+            });
+        }
+    };
+</script><script type="text/javascript">
+    TSP.DFP.tags.buzzoola = function(frameId, hash, divId) {
+    var elem = document.getElementById(frameId);
+    elem.contentWindow.location = 'about:blank';
+    elem.parentElement.parentElement.style.height = "inherit";
+    elem.style.width = "100%";
+    elem.style.height = "0px";
+
+    divId = !divId ? elem.parentElement : document.getElementById(divId);
+
+    divId.className = 'buzzplayer-stage';
+    divId.setAttribute('data-hash', hash);
+    divId.setAttribute('data-width', '100%');
+    divId.setAttribute('data-expandable', 'true');
+
+    window.onBuzzoolaPlayerReady = function(player) {
+        player.on('error', function () {
+            TSP.DFP.Switch(frameId);
+        })
+    };
+
+    (function(d) {
+            var js = d.createElement("script"),
+                s = d.getElementsByTagName("script")[0];
+            js.type = "text/javascript";
+            js.async = true;
+            js.src = "//tube.buzzoola.com/new/build/buzzlibrary.js";
+            s.parentNode.insertBefore(js, s);
+        })(document);
+    }
+</script></head>
+<body data-domain="brightside.me" data-locale-short="en" data-locale-full="en_US" data-twitter-account="bright_side_me">
+<div class="top-ad" align="center">
+    <div id='div-gpt-ad-1895654370662-0' class="dfp-ad-block-div" style='width:1000px;'>
+    <script>
+        window.TSP.DFP.startScrollDependentCs('desktop-topline', 'div-gpt-ad-1895654370662-0', [[1000,120],[1000,250],[728,90],[750,100],[750,200],[930,180],[950,90],[960,90],[970,90],[970,250],[980,90],[980,120]], '0', 1, 5, 0);
+    </script>
+</div></div>
+<main class="page"><div class="wrap footer-placeholder">
+        <!-- Header -->
+        <header class="new-header">
+            <a href="/" class="logo"></a>
+            
+<nav class="header-nav">
+    <ul>
+                    <li class="header-nav-sec js-main-menu-container">
+            <a href="#" class="js-main-menu-handle current">
+                Inspiration            </a>
+            <div class="header-nav-submenu">
+                <div class="container">
+                    <ul class="header-nav-submenu-list">
+                            <li>
+        <a href="/inspiration-psychology/" data-rubricid="3" class="js-menu-subrubr-item ">
+            Psychology        </a>
+    </li>
+    <li>
+        <a href="/inspiration-tips-and-tricks/" data-rubricid="4" class="js-menu-subrubr-item ">
+            Tips &amp; tricks        </a>
+    </li>
+    <li>
+        <a href="/inspiration-girls-stuff/" data-rubricid="5" class="js-menu-subrubr-item ">
+            Girls stuff        </a>
+    </li>
+    <li>
+        <a href="/inspiration-relationships/" data-rubricid="6" class="js-menu-subrubr-item ">
+            Relationships        </a>
+    </li>
+    <li>
+        <a href="/inspiration-family-and-kids/" data-rubricid="7" class="js-menu-subrubr-item ">
+            Family &amp; kids        </a>
+    </li>
+    <li>
+        <a href="/inspiration-health/" data-rubricid="8" class="js-menu-subrubr-item current">
+            Health        </a>
+    </li>
+                    </ul>
+                    <div class="fresh">
+                            <ul>
+                                <li class=" js-webstats-reach js-webstats-click " data-id="381160">
+                <a class="fresh-pic" href="/inspiration-relationships/11-things-you-dont-have-to-do-for-your-beloved-381160/">
+                    <img alt="11 Things You Don’t Have to Do for Your Beloved" title="11 Things You Don’t Have to Do for Your Beloved" width="70" height="70" src="https://files.brightside.me/files/news/part_38/381160/preview-16220810-70x70-70-1506591056.jpg">
+                </a>
+                <div class="fresh-inner">
+                    <p>
+                        <a href="/inspiration-relationships/11-things-you-dont-have-to-do-for-your-beloved-381160/" data-ga-category="InternalClicks" data-ga-action="MenuArticles">11 Things You Don’t Have to Do for Your Beloved</a>                    </p>
+                </div>
+            </li>
+                                <li class=" js-webstats-reach js-webstats-click " data-id="381110">
+                <a class="fresh-pic" href="/inspiration-tips-and-tricks/12-things-that-will-save-your-life-in-a-critical-situation-381110/">
+                    <img alt="12 Things That Will Save Your Life in a Critical Situation" title="12 Things That Will Save Your Life in a Critical Situation" width="70" height="70" src="https://files.brightside.me/files/news/part_38/381110/preview-16218810-70x70-70-1506591018.jpg">
+                </a>
+                <div class="fresh-inner">
+                    <p>
+                        <a href="/inspiration-tips-and-tricks/12-things-that-will-save-your-life-in-a-critical-situation-381110/" data-ga-category="InternalClicks" data-ga-action="MenuArticles">12 Things That Will Save Your Life in a Critical Situation</a>                    </p>
+                </div>
+            </li>
+                                <li class=" js-webstats-reach js-webstats-click " data-id="381060">
+                <a class="fresh-pic" href="/inspiration-family-and-kids/24-proofs-that-children-are-little-geniuses-381060/">
+                    <img alt="24 Proofs That Children Are Little Geniuses" title="24 Proofs That Children Are Little Geniuses" width="70" height="70" src="https://files.brightside.me/files/news/part_38/381060/preview-16213960-70x70-70-1506549255.jpg">
+                </a>
+                <div class="fresh-inner">
+                    <p>
+                        <a href="/inspiration-family-and-kids/24-proofs-that-children-are-little-geniuses-381060/" data-ga-category="InternalClicks" data-ga-action="MenuArticles">24 Proofs That Children Are Little Geniuses</a>                    </p>
+                </div>
+            </li>
+            </ul>
+                    </div>
+                </div>
+                <ul class="header__nav-footer">
+        <li><a href="/article/how-we-make-bright-side-83405/">About Bright Side</a></li>
+        <li><a href="/article/vacancy-freelance-writer-for-bright-side-83455/">Vacancy</a></li>
+        <li><a href="https://thesoul-publishing.com/#contacts">Contact us</a></li>
+        <li><a href="/article/copyright-policy-117605/">Copyright policy</a></li>
+        <li><a href="/privacy/">Privacy policy</a></li>
+    </ul>            </div>
+        </li>
+                    <li class="header-nav-sec js-main-menu-container">
+            <a href="#" class="js-main-menu-handle ">
+                Creativity            </a>
+            <div class="header-nav-submenu">
+                <div class="container">
+                    <ul class="header-nav-submenu-list">
+                            <li>
+        <a href="/creativity-home/" data-rubricid="9" class="js-menu-subrubr-item ">
+            Home        </a>
+    </li>
+    <li>
+        <a href="/creativity-design/" data-rubricid="10" class="js-menu-subrubr-item ">
+            Design        </a>
+    </li>
+    <li>
+        <a href="/creativity-cooking/" data-rubricid="11" class="js-menu-subrubr-item ">
+            Cooking        </a>
+    </li>
+    <li>
+        <a href="/creativity-photography/" data-rubricid="12" class="js-menu-subrubr-item ">
+            Photography        </a>
+    </li>
+    <li>
+        <a href="/creativity-art/" data-rubricid="13" class="js-menu-subrubr-item ">
+            Art        </a>
+    </li>
+    <li>
+        <a href="/creativity-books/" data-rubricid="23" class="js-menu-subrubr-item ">
+            Books        </a>
+    </li>
+                    </ul>
+                    <div class="fresh">
+                            <ul>
+                                <li class=" js-webstats-reach js-webstats-click " data-id="170755">
+                <a class="fresh-pic" href="/creativity-home/15-bright-ideas-for-reinventing-your-bathroom-space-170755/">
+                    <img alt="17 Brilliant Ideas for Your Bathroom You’ll Want to Try Immediately" title="17 Brilliant Ideas for Your Bathroom You’ll Want to Try Immediately" width="70" height="70" src="https://files.brightside.me/files/news/part_17/170755/preview-16217410-70x70-70-1506589604.jpg">
+                </a>
+                <div class="fresh-inner">
+                    <p>
+                        <a href="/creativity-home/15-bright-ideas-for-reinventing-your-bathroom-space-170755/" data-ga-category="InternalClicks" data-ga-action="MenuArticles">17 Brilliant Ideas for Your Bathroom You’ll Want to Try Immediately</a>                    </p>
+                </div>
+            </li>
+                                <li class=" js-webstats-reach js-webstats-click " data-id="380910">
+                <a class="fresh-pic" href="/creativity-design/16-awesome-inventions-to-make-your-life-easier-380910/">
+                    <img alt="16 Awesome Inventions to Make Your Life Easier" title="16 Awesome Inventions to Make Your Life Easier" width="70" height="70" src="https://files.brightside.me/files/news/part_38/380910/preview-16204810-70x70-70-1506518507.jpg">
+                </a>
+                <div class="fresh-inner">
+                    <p>
+                        <a href="/creativity-design/16-awesome-inventions-to-make-your-life-easier-380910/" data-ga-category="InternalClicks" data-ga-action="MenuArticles">16 Awesome Inventions to Make Your Life Easier</a>                    </p>
+                </div>
+            </li>
+                                <li class=" js-webstats-reach js-webstats-click " data-id="380760">
+                <a class="fresh-pic" href="/creativity-design/11-myths-we-only-believe-because-advertisers-told-us-to-380760/">
+                    <img alt="11 Myths We Only Believe Because Advertisers Told Us to" title="11 Myths We Only Believe Because Advertisers Told Us to" width="70" height="70" src="https://files.brightside.me/files/news/part_38/380760/preview-16196810-70x70-70-1506460110.jpg">
+                </a>
+                <div class="fresh-inner">
+                    <p>
+                        <a href="/creativity-design/11-myths-we-only-believe-because-advertisers-told-us-to-380760/" data-ga-category="InternalClicks" data-ga-action="MenuArticles">11 Myths We Only Believe Because Advertisers Told Us to</a>                    </p>
+                </div>
+            </li>
+            </ul>
+                    </div>
+                </div>
+                <ul class="header__nav-footer">
+        <li><a href="/article/how-we-make-bright-side-83405/">About Bright Side</a></li>
+        <li><a href="/article/vacancy-freelance-writer-for-bright-side-83455/">Vacancy</a></li>
+        <li><a href="https://thesoul-publishing.com/#contacts">Contact us</a></li>
+        <li><a href="/article/copyright-policy-117605/">Copyright policy</a></li>
+        <li><a href="/privacy/">Privacy policy</a></li>
+    </ul>            </div>
+        </li>
+                    <li class="header-nav-sec js-main-menu-container">
+            <a href="#" class="js-main-menu-handle ">
+                Wonder            </a>
+            <div class="header-nav-submenu">
+                <div class="container">
+                    <ul class="header-nav-submenu-list">
+                            <li>
+        <a href="/wonder-animals/" data-rubricid="14" class="js-menu-subrubr-item ">
+            Animals        </a>
+    </li>
+    <li>
+        <a href="/wonder-people/" data-rubricid="15" class="js-menu-subrubr-item ">
+            People        </a>
+    </li>
+    <li>
+        <a href="/wonder-curiosities/" data-rubricid="16" class="js-menu-subrubr-item ">
+            Curiosities        </a>
+    </li>
+    <li>
+        <a href="/wonder-films/" data-rubricid="17" class="js-menu-subrubr-item ">
+            Films        </a>
+    </li>
+    <li>
+        <a href="/wonder-places/" data-rubricid="18" class="js-menu-subrubr-item ">
+            Places        </a>
+    </li>
+    <li>
+        <a href="/wonder-quizzes/" data-rubricid="19" class="js-menu-subrubr-item ">
+            Quizzes        </a>
+    </li>
+                    </ul>
+                    <div class="fresh">
+                            <ul>
+                                <li class=" js-webstats-reach js-webstats-click " data-id="290760">
+                <a class="fresh-pic" href="/wonder-films/this-is-how-the-game-of-thrones-characters-should-really-look-290760/">
+                    <img alt="This is How the “Game of Thrones” Characters Should Really Look" title="This is How the “Game of Thrones” Characters Should Really Look" width="70" height="70" src="https://files.brightside.me/files/news/part_29/290760/preview-16222560-70x70-70-1506596128.jpg">
+                </a>
+                <div class="fresh-inner">
+                    <p>
+                        <a href="/wonder-films/this-is-how-the-game-of-thrones-characters-should-really-look-290760/" data-ga-category="InternalClicks" data-ga-action="MenuArticles">This is How the “Game of Thrones” Characters Should Really Look</a>                    </p>
+                </div>
+            </li>
+                                <li class=" js-webstats-reach js-webstats-click " data-id="342310">
+                <a class="fresh-pic" href="/wonder-curiosities/11-absolutely-incredible-things-our-body-does-every-day-342310/">
+                    <img alt="11 Absolutely Incredible Things Our Body Does Every Day" title="11 Absolutely Incredible Things Our Body Does Every Day" width="70" height="70" src="https://files.brightside.me/files/news/part_34/342310/preview-14620260-70x70-70-1506579477.jpg">
+                </a>
+                <div class="fresh-inner">
+                    <p>
+                        <a href="/wonder-curiosities/11-absolutely-incredible-things-our-body-does-every-day-342310/" data-ga-category="InternalClicks" data-ga-action="MenuArticles">11 Absolutely Incredible Things Our Body Does Every Day</a>                    </p>
+                </div>
+            </li>
+                                <li class=" js-webstats-reach js-webstats-click " data-id="293760">
+                <a class="fresh-pic" href="/wonder-curiosities/12-secrets-from-airline-employees-that-passengers-know-nothing-about-293760/">
+                    <img alt="13 Secrets From Airline Employees That Passengers Know Nothing About" title="13 Secrets From Airline Employees That Passengers Know Nothing About" width="70" height="70" src="https://files.brightside.me/files/news/part_29/293760/preview-16211310-70x70-70-1506522715.jpg">
+                </a>
+                <div class="fresh-inner">
+                    <p>
+                        <a href="/wonder-curiosities/12-secrets-from-airline-employees-that-passengers-know-nothing-about-293760/" data-ga-category="InternalClicks" data-ga-action="MenuArticles">13 Secrets From Airline Employees That Passengers Know Nothing About</a>                    </p>
+                </div>
+            </li>
+            </ul>
+                    </div>
+                </div>
+                <ul class="header__nav-footer">
+        <li><a href="/article/how-we-make-bright-side-83405/">About Bright Side</a></li>
+        <li><a href="/article/vacancy-freelance-writer-for-bright-side-83455/">Vacancy</a></li>
+        <li><a href="https://thesoul-publishing.com/#contacts">Contact us</a></li>
+        <li><a href="/article/copyright-policy-117605/">Copyright policy</a></li>
+        <li><a href="/privacy/">Privacy policy</a></li>
+    </ul>            </div>
+        </li>
+            </ul>
+</nav>
+<div class="header-inner">
+    <ul class="header-inner-nav">
+    </ul>
+    <form action="/search/" class="search js-search">
+        <fieldset>
+            <input class="search-field search-focused" type="text" name="q"> <span
+                class="search-button" title="Find"><input type="submit"
+                                                           value="Find"></span>
+        </fieldset>
+    </form>
+</div>
+
+        </header>
+        <!-- /Header -->
+        <div class="container"><!-- Content -->
+<section class="content content-flex" id="js-article-content">
+    <article class="article js-article-content article-new-editor js-webstats-view " data-id="356210">
+                <h1>There Is Only One Thing That Influences Your Weight</h1>
+
+                <img src="https://files.brightside.me/files/news/part_35/356210/preview-15176310-650x341-98-1500888149.jpg" class="webfeedsFeaturedVisual" style="display:none;">
+
+            <div id="js-article-share-top">
+        <ul class="article__share">
+            <li><a href="#" class="article__share_fb js-share" data-provider="fb" title="Facebook"  data-ga-category="FacebookArticleTop" data-ga-action="Share">Share on Facebook</a></li>
+            <li><a href="#" class="article__share_tw js-share" data-provider="tw" title="Twitter"  data-ga-category="TwitterArticleTop" data-ga-action="Share">Share on Twitter</a></li>
+            <li><a href="#" class="article__share_pin js-share" data-provider="pin" title="Pinterest"  data-ga-category="PinterestArticleTop" data-ga-action="Share">Share on Pinterest</a></li>
+        </ul>
+    </div>
+
+
+        <div id="js-block-8628210">
+    
+<p>Many of us want to lose weight. There are so many inspiring examples around us that it becomes obvious that extra weight is not only unhealthy but also unpopular.</p>
+<p>We at <strong>Bright Side</strong> decided to tell you about a rule that will help you lose weight.</p>
+</div><div id="js-block-8628260">
+    
+<p> </p>
+<p> </p>
+</div><div id="js-block-8628310">
+    <p>
+    <a name="image15176460" href="#image15176460" style="display:block; clear:both; margin-left:auto; margin-right:auto; text-align:center;"
+       class="article-integrated-image-anchor js-gif-play">
+        <span class="article-pic js-article-image "
+              data-id="15176460">
+
+                                    <img src="https://files.brightside.me/files/news/part_35/356210/15176110-854060-1-5ImageImageTranslation-ruenarticle3404s-0-1500638833-1500638837-650-1-1500638837-650-32e9147584-1500888149.jpg" data-social="https://files.brightside.me/files/news/part_35/356210/15176110-854060-1-5ImageImageTranslation-ruenarticle3404s-0-1500638833-1500638837-650-1-1500638837-650-32e9147584-1500888149.jpg"
+                     width="650" height="83" border="0"
+                                                          />
+                    
+        </span>
+    </a>
+</p>
+</div><div id="js-block-8628360">
+    
+<p>Healthy eating and moderate physical activity are well-known ways to achieve a good shape if you do not have health problems that might be an obstacle to it. However, these activities won’t give results if you do not stick to the rule of energy balance.</p>
+<p>It has been proved that it is easier for a body to maintain its existing weight than to lose excess weight. The rule of energy balance helps not only to <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3302369/" target="_blank">lose weight</a> but also to <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3401553/" target="_blank">prevent obesity</a>.</p>
+</div><div id="js-block-8628410">
+    
+<p> </p>
+<p> </p>
+</div><div id="js-block-8628460">
+    <p>
+    <a name="image15176510" href="#image15176510" style="display:block; clear:both; margin-left:auto; margin-right:auto; text-align:center;"
+       class="article-integrated-image-anchor js-gif-play">
+        <span class="article-pic js-article-image "
+              data-id="15176510">
+
+                                    <img src="https://files.brightside.me/files/news/part_35/356210/15176160-854810-2-5ImageImageTranslation-ruenarticle3404s-0-1500638981-1500639016-650-1-1500639016-650-32e9147584-1500888149.jpg" data-social="https://files.brightside.me/files/news/part_35/356210/15176160-854810-2-5ImageImageTranslation-ruenarticle3404s-0-1500638981-1500639016-650-1-1500639016-650-32e9147584-1500888149.jpg"
+                     width="650" height="1310" border="0"
+                                                          />
+                    
+        </span>
+    </a>
+</p>
+</div><div id="js-block-8628510">
+    
+<p><b>The rule of energy balance </b>is as follows: we should consume exactly the amount of calories that we spend daily. In this case, it is impossible to gain weight.</p>
+<p>When we consume more calories than we spend, our weight slightly increases.</p>
+<p>If we consume fewer calories than we spend, we lose weight. This is the key to success.</p>
+</div><div id="js-block-">
+    <div class="inread-desktop-container">
+    <div id='div-gpt-ad-4451760831111-1L' class="dfp-ad-block-div" style='width:300px;'>
+    <script>
+        window.TSP.DFP.startScrollDependentCs('article-inread-desktop-rect', 'div-gpt-ad-4451760831111-1L', [[300,250]], '1L', 1, 5, 0);
+    </script>
+</div>
+    <div id='div-gpt-ad-8970756273119-1R' class="dfp-ad-block-div" style='width:300px;'>
+    <script>
+        window.TSP.DFP.startScrollDependentCs('article-inread-desktop-rect', 'div-gpt-ad-8970756273119-1R', [[300,250]], '1R', 1, 5, 2000);
+    </script>
+</div></div>
+<div class="inread-desktop-splitter"></div></div><div id="js-block-8628560">
+    
+<p> </p>
+<p> </p>
+</div><div id="js-block-8628610">
+    <p>
+    <a name="image15176560" href="#image15176560" style="display:block; clear:both; margin-left:auto; margin-right:auto; text-align:center;"
+       class="article-integrated-image-anchor js-gif-play">
+        <span class="article-pic js-article-image "
+              data-id="15176560">
+
+                                    <img src="https://files.brightside.me/files/news/part_35/356210/15176210-856910-3-5ImageImageTranslation-ruenarticle3404s-0-1500639084-1500639086-650-1-1500639086-650-32e9147584-1500888149.jpg" data-social="https://files.brightside.me/files/news/part_35/356210/15176210-856910-3-5ImageImageTranslation-ruenarticle3404s-0-1500639084-1500639086-650-1-1500639086-650-32e9147584-1500888149.jpg"
+                     width="650" height="83" border="0"
+                                                          />
+                    
+        </span>
+    </a>
+</p>
+</div><div id="js-block-8628660">
+    
+<p>In order to find out the number of calories that we spend a day, we prepared the following <strong>approximate</strong> calculations:</p>
+<ul>
+<li>8 hours of sleep a night — 260-300 calories</li> <li>8 hours of office work — 480-500 calories</li> <li>To work and back using public transportation — 28 calories in 30 minutes</li> <li>1 hour of gym workout — 230-350 calories</li> <li>Other expenditure (stress, energy spent on food digestion, etc.) — 570-800 calories</li> <li>If you are a man, add approximately 200-400 calories depending on your daily activity</li> </ul>
+<p>Please note that your expenditure may alter from this list because it largely depends on your weight and the intensity of physical activity. In order to find out your real daily energy expenditure, use a <a href="https://www.health-calc.com/diet/energy-expenditure-advanced" target="_blank">calculator</a>.</p>
+</div><div id="js-block-8628710">
+    
+<p> </p>
+<p> </p>
+</div><div id="js-block-8628760">
+    <h3 style="text-align: center;">Anthony Howard-Crow lost 15 kg eating only ice cream.</h3></div><div id="js-block-8628810">
+    <div
+    class="fb-post"
+    data-width="650"
+    data-href="https://www.facebook.com/photo.php?fbid=10102488021317507&set=a.903007429087.2311719.37609110&type=3&theater">
+</div></div><div id="js-block-8628860">
+    
+<p>Anthony Howard-Crow, a fitness blogger from Colorado, set up an interesting experiment. He ate<strong> only ice cream for 100 days</strong>. This man lost almost 30 lbs in 62 days.</p>
+<p>Every day he was consuming less than 2,000 calories. He did a lot of physical activity in order to burn more calories than he consumed. It worked out, as you can see. However, by the end of the experiment, he complained of tiredness and weakness. Ice cream is probably not the best diet, though the result was more than obvious.</p>
+</div><div id="js-block-">
+    <div class="inread-desktop-container">
+    <div id='div-gpt-ad-5479931907765-2L' class="dfp-ad-block-div" style='width:300px;'>
+    <script>
+        window.TSP.DFP.startScrollDependentCs('article-inread-desktop-rect', 'div-gpt-ad-5479931907765-2L', [[300,250]], '2L', 1, 5, 0);
+    </script>
+</div>
+    <div id='div-gpt-ad-2175046566833-2R' class="dfp-ad-block-div" style='width:300px;'>
+    <script>
+        window.TSP.DFP.startScrollDependentCs('article-inread-desktop-rect', 'div-gpt-ad-2175046566833-2R', [[300,250]], '2R', 1, 5, 2000);
+    </script>
+</div></div>
+<div class="inread-desktop-splitter"></div></div><div id="js-block-8628910">
+    <h3 style="text-align: center;">John Cisna lost 28 kg eating only fast food.</h3></div><div id="js-block-8628960">
+    <p>
+    <a name="image15176610" href="#image15176610" style="display:block; clear:both; margin-left:auto; margin-right:auto; text-align:center;"
+       class="article-integrated-image-anchor js-gif-play">
+        <span class="article-pic js-article-image "
+              data-id="15176610">
+
+                                    <img src="https://files.brightside.me/files/news/part_35/356210/15176260-884610-1-2ImageOther-article-0-1499862732-1499862739-0-1500634909-0-1500646389-1500646396-650-1-1500646396-650-21f393c59b-1500888149.jpg" data-social="https://files.brightside.me/files/news/part_35/356210/15176260-884610-1-2ImageOther-article-0-1499862732-1499862739-0-1500634909-0-1500646389-1500646396-650-1-1500646396-650-21f393c59b-1500888149.jpg"
+                     width="650" height="367" border="0"
+                                                          />
+                    
+        </span>
+    </a>
+</p>
+
+<p class="adme-img-copyright" style="text-align: center">
+                            <a href="https://www.facebook.com/johncisna/photos/a.1383139828591839.1073741827.1383138665258622/1393886680850487/?type=3&amp;theater" target="_blank">© John Cisna</a>
+            &nbsp;
+    </p>
+</div><div id="js-block-8629010">
+    
+<p>John Cisna is a teacher from Iowa.<strong> He ate only McDonald’s for half a year. </strong> As a result, he lost 28 kg.</p>
+<p>John also adhered to the same rule: he spent more calories than he consumed. He also tried to maintain a daily norm of carbohydrates, protein, and fat, and he walked for at least 45 minutes every day.</p>
+</div><div id="js-block-8629060">
+    <p>The rule of energy balance really works. However, it is necessary to remember about <strong>physical activity</strong>. It helps to keep muscles in good shape. In this case, your lean body will also be nice and taut. </p>
+</div><div id="js-block-8629110">
+    <p style="text-align: right;">
+                    Preview photo credit <a href="https://www.facebook.com/johncisna/photos/a.1383139828591839.1073741827.1383138665258622/1393886680850487/?type=3&amp;theater">John Cisna</a>        <br>
+    </p>
+</div>        
+
+    </article>
+        <div id="js-article-share-bottom" style="padding-bottom:20px;">
+        <ul class="article__share">
+            <li><a href="#" class="article__share_fb js-share" data-provider="fb" title="Facebook"  data-ga-category="FacebookArticleBottom" data-ga-action="Share">Share on Facebook</a></li>
+            <li><a href="#" class="article__share_tw js-share" data-provider="tw" title="Twitter"  data-ga-category="TwitterArticleBottom" data-ga-action="Share">Share on Twitter</a></li>
+            <li><a href="#" class="article__share_pin js-share" data-provider="pin" title="Pinterest"  data-ga-category="PinterestArticleBottom" data-ga-action="Share">Share on Pinterest</a></li>
+        </ul>
+    </div>
+    <div>
+        <script>
+    window.TSP.DFP.triggeredSlots.csEnded.inreadDesktop = {
+        trigger: function (context) {
+            return document.getElementById(context.oldSlot.getSlotElementId()).parentNode.classList.contains('inread-desktop-container');
+        },
+        action: function (context) {
+            var parentContainer = document.getElementById(context.oldSlot.getSlotElementId()).parentNode;
+            parentContainer.classList.add('closed');
+            parentContainer.dataset.state = 'closed';
+            var childs = parentContainer.getElementsByClassName('dfp-ad-block-div');
+            for (var i = 0; i < childs.length; i++) {
+                childs[i].classList.add('dfp-single-inread-block');
+                TSP.DFP.startScrollDependentCs();
+            }
+        }
+    };
+</script>
+<div class="inread-desktop-container">
+    <div id='div-gpt-ad-7646707365520-0L' class="dfp-ad-block-div" style='width:300px;'>
+    <script>
+        window.TSP.DFP.startScrollDependentCs('desktop-under-art-rect', 'div-gpt-ad-7646707365520-0L', [[300,250]], '0L', 1, 5, 0);
+    </script>
+</div>
+    <div id='div-gpt-ad-1362348181163-0R' class="dfp-ad-block-div" style='width:300px;'>
+    <script>
+        window.TSP.DFP.startScrollDependentCs('desktop-under-art-rect', 'div-gpt-ad-1362348181163-0R', [[300,250]], '0R', 1, 5, 0);
+    </script>
+</div></div>
+    </div>
+
+    <h3 class="theme-title gallery-more-title">We’d love to hear your views on this…</h3>
+<div data-version="v2.9" class="fb-comments" data-href="https://brightside.me/inspiration-health/there-is-only-one-thing-that-influences-your-weight-356210/" data-width="650" data-numposts="5" data-colorscheme="light"></div>
+<br /><br />
+</section>
+
+<!-- Aside -->
+<aside class="aside" id="js-aside">
+        <div class="aside-ad-container">
+    <div class="aside-ad js-ads-container" align="center" data-height="600">
+        <div id='div-gpt-ad-1365510566032-0' class="dfp-ad-block-div" style='width:300px;'>
+    <script>
+        window.TSP.DFP.startScrollDependentCs('desktop-half', 'div-gpt-ad-1365510566032-0', [[300,600],[240,400],[300,500]], '0', 1, 5, 0);
+    </script>
+</div>    </div>
+</div>    
+    <div id="js-aside-recommend-block" class="article-recommended-right">
+        <ul class="article-list gallery-more js-article-more-list"
+    data-article-url="https://brightside.me/inspiration-health/there-is-only-one-thing-that-influences-your-weight-356210/"
+    data-filler="aside"
+    data-filler-prefill="10"
+    data-filler-autofill="1"
+    data-filler-more-limit="16"
+    data-loader="default"
+    data-loader-limit="50"
+    data-injector="random"
+    data-injector-slot-start="0"
+>
+            <li class="article-list-block js-article-list-item js-webstats-reach js-webstats-click " data-id="369410">
+                    <ul class="al-stats al-stats-video">
+                <li class="al-stats-views"><a href="/wonder-curiosities/15-unique-body-features-almost-no-one-has-369410/">10 680</a></li>
+            </ul>
+                <a href="/wonder-curiosities/15-unique-body-features-almost-no-one-has-369410/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="1"><img class="al-pic" src="https://files.brightside.me/files/news/part_36/369410/preview-15681460-300x158-97-1503691195.jpg" width="300" height="158" alt="15 Unique Body Features Almost No One Has"></a>
+        <p><a href="/wonder-curiosities/15-unique-body-features-almost-no-one-has-369410/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="1">15 Unique Body Features Almost No One Has</a></p>
+    </li>
+                        <li class="article-list-block js-article-list-item js-webstats-reach js-webstats-click " data-id="363010">
+                    <ul class="al-stats al-stats-video">
+                <li class="al-stats-views"><a href="/inspiration-health/10-organic-oils-to-give-you-a-gorgeous-tan-363010/">4 192</a></li>
+            </ul>
+                <a href="/inspiration-health/10-organic-oils-to-give-you-a-gorgeous-tan-363010/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="2"><img class="al-pic" src="https://files.brightside.me/files/news/part_36/363010/preview-15424060-300x158-97-1502198579.jpg" width="300" height="158" alt="10 Organic Oils to Give You a Gorgeous Tan"></a>
+        <p><a href="/inspiration-health/10-organic-oils-to-give-you-a-gorgeous-tan-363010/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="2">10 Organic Oils to Give You a Gorgeous Tan</a></p>
+    </li>
+                        <li class="article-list-block js-article-list-item js-webstats-reach js-webstats-click " data-id="353110">
+                    <ul class="al-stats al-stats-video">
+                <li class="al-stats-views"><a href="/wonder-people/12-colorful-stories-about-how-badly-we-need-vacations-353110/">171 716</a></li>
+            </ul>
+                <a href="/wonder-people/12-colorful-stories-about-how-badly-we-need-vacations-353110/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="3"><img class="al-pic" src="https://files.brightside.me/files/news/part_35/353110/preview-15058710-300x158-97-1499977975.jpg" width="300" height="158" alt="12 Colorful Stories About How Badly We Need Vacations"></a>
+        <p><a href="/wonder-people/12-colorful-stories-about-how-badly-we-need-vacations-353110/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="3">12 Colorful Stories About How Badly We Need Vacations</a></p>
+    </li>
+                        <li class="article-list-block js-article-list-item js-webstats-reach js-webstats-click " data-id="364610">
+                    <ul class="al-stats al-stats-video">
+                <li class="al-stats-views"><a href="/inspiration-tips-and-tricks/8-driving-habits-that-wreck-your-car-and-drain-your-wallet-364610/">175 549</a></li>
+            </ul>
+                <a href="/inspiration-tips-and-tricks/8-driving-habits-that-wreck-your-car-and-drain-your-wallet-364610/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="4"><img class="al-pic" src="https://files.brightside.me/files/news/part_36/364610/preview-15482660-300x158-97-1502525623.jpg" width="300" height="158" alt="8 Driving Habits That Wreck Your Car and Drain Your Wallet"></a>
+        <p><a href="/inspiration-tips-and-tricks/8-driving-habits-that-wreck-your-car-and-drain-your-wallet-364610/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="4">8 Driving Habits That Wreck Your Car and Drain Your Wallet</a></p>
+    </li>
+                <li class="article-list-block js-article-list-item js-webstats-reach js-webstats-click " data-id="371210">
+                    <ul class="al-stats al-stats-video">
+                <li class="al-stats-views"><a href="/wonder-curiosities/12-astonishing-facts-about-famous-logos-you-didnt-know-371210/">524 394</a></li>
+            </ul>
+                <a href="/wonder-curiosities/12-astonishing-facts-about-famous-logos-you-didnt-know-371210/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="5"><img class="al-pic" src="https://files.brightside.me/files/news/part_37/371210/preview-15757460-300x158-97-1504039123.jpg" width="300" height="158" alt="12 Astonishing Facts About Famous Logos You Didn’t Know"></a>
+        <p><a href="/wonder-curiosities/12-astonishing-facts-about-famous-logos-you-didnt-know-371210/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="5">12 Astonishing Facts About Famous Logos You Didn’t Know</a></p>
+    </li>
+                <li class="article-list-block js-article-list-item js-webstats-reach js-webstats-click " data-id="376210">
+                    <ul class="al-stats al-stats-video">
+                <li class="al-stats-views"><a href="/inspiration-psychology/how-to-criticize-your-partner-without-damaging-the-relationship-376210/">31 809</a></li>
+            </ul>
+                <a href="/inspiration-psychology/how-to-criticize-your-partner-without-damaging-the-relationship-376210/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="6"><img class="al-pic" src="https://files.brightside.me/files/news/part_37/376210/preview-15968310-300x158-97-1505312995.jpg" width="300" height="158" alt="How to Criticize Your Partner Without Damaging the Relationship"></a>
+        <p><a href="/inspiration-psychology/how-to-criticize-your-partner-without-damaging-the-relationship-376210/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="6">How to Criticize Your Partner Without Damaging the Relationship</a></p>
+    </li>
+                <li class="article-list-block js-article-list-item js-webstats-reach js-webstats-click " data-id="372910">
+                    <ul class="al-stats al-stats-video">
+                <li class="al-stats-views"><a href="/wonder-people/12-exclusive-rules-from-the-duchess-of-cambridge-372910/">38 454</a></li>
+            </ul>
+                <a href="/wonder-people/12-exclusive-rules-from-the-duchess-of-cambridge-372910/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="7"><img class="al-pic" src="https://files.brightside.me/files/news/part_37/372910/preview-15828660-300x158-97-1504507138.jpg" width="300" height="158" alt="12 Exclusive Rules From the Duchess of Cambridge"></a>
+        <p><a href="/wonder-people/12-exclusive-rules-from-the-duchess-of-cambridge-372910/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="7">12 Exclusive Rules From the Duchess of Cambridge</a></p>
+    </li>
+                <li class="article-list-block js-article-list-item js-webstats-reach js-webstats-click " data-id="374460">
+                    <ul class="al-stats al-stats-video">
+                <li class="al-stats-views"><a href="/inspiration-psychology/15-smart-phrases-to-resolve-any-conflict-374460/">13 766</a></li>
+            </ul>
+                <a href="/inspiration-psychology/15-smart-phrases-to-resolve-any-conflict-374460/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="8"><img class="al-pic" src="https://files.brightside.me/files/news/part_37/374460/preview-15886760-300x158-97-1504779078.jpg" width="300" height="158" alt="15 Smart Phrases to Resolve Any Conflict"></a>
+        <p><a href="/inspiration-psychology/15-smart-phrases-to-resolve-any-conflict-374460/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="8">15 Smart Phrases to Resolve Any Conflict</a></p>
+    </li>
+                <li class="article-list-block js-article-list-item js-webstats-reach js-webstats-click " data-id="351210">
+                    <ul class="al-stats al-stats-video">
+                <li class="al-stats-views"><a href="/inspiration-psychology/9-signs-you-should-end-the-relationship-351210/">187 413</a></li>
+            </ul>
+                <a href="/inspiration-psychology/9-signs-you-should-end-the-relationship-351210/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="9"><img class="al-pic" src="https://files.brightside.me/files/news/part_35/351210/preview-14977510-300x158-97-1499377240.jpg" width="300" height="158" alt="9 Signs You Should End the Relationship"></a>
+        <p><a href="/inspiration-psychology/9-signs-you-should-end-the-relationship-351210/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="9">9 Signs You Should End the Relationship</a></p>
+    </li>
+                <li class="article-list-block js-article-list-item js-webstats-reach js-webstats-click " data-id="371260">
+                    <ul class="al-stats al-stats-video">
+                <li class="al-stats-views"><a href="/wonder-curiosities/20-brilliant-thoughts-people-had-in-the-shower-371260/">4 023</a></li>
+            </ul>
+                <a href="/wonder-curiosities/20-brilliant-thoughts-people-had-in-the-shower-371260/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="10"><img class="al-pic" src="https://files.brightside.me/files/news/part_37/371260/preview-15889460-300x158-97-1504787541.jpg" width="300" height="158" alt="22 Brilliant Thoughts People Had in the Shower"></a>
+        <p><a href="/wonder-curiosities/20-brilliant-thoughts-people-had-in-the-shower-371260/"  data-ga-category="InternalClicks" data-ga-action="ArticleRecommendRight" data-ga-label="10">22 Brilliant Thoughts People Had in the Shower</a></p>
+    </li>
+        </ul>
+<div class="rotater js-article-more-rotater"></div>
+    </div>
+    
+    <div id="js-floating-banner-container">
+                    <div id="js-floating-banner-container" class="aside-ad-container">
+    <div class="aside-ad js-ads-container" data-height="600">
+        <div id='div-gpt-ad-3840405366672-0' class="dfp-ad-block-div" style='width:300px;'>
+    <script>
+        window.TSP.DFP.startScrollDependentCs('desktop-half-float', 'div-gpt-ad-3840405366672-0', [[300,600],[240,400],[300,500]], '0', 1, 5, 0);
+    </script>
+</div>    </div>
+    </div>        </div>
+</aside>
+<!-- /Aside -->
+
+<div class="more-articles-container">
+    <ul class="article-list gallery-more js-article-more-list js-article-more-list-bottom" style="display:none;"    data-article-url="https://brightside.me/inspiration-health/there-is-only-one-thing-that-influences-your-weight-356210/"
+    data-filler-defer="true"    data-filler="default"
+    data-filler-prefill="16"
+    data-filler-autofill="0"
+    data-filler-more-limit="16"
+    data-loader="surfingbird"
+    data-loader-limit="50"
+    data-injector="random"
+    data-injector-slot-start="50"
+>
+    </ul>
+<div class="rotater js-article-more-rotater"></div>
+</div>
+
+
+
+<div style="display: none;">
+    <span class="article-pic-soc" id="js-article-image-share" data-twitter-title="There Is Only One Thing That Influences Your Weight">
+        <span class="article-pic-soc-fb js-button" data-provider="fb"  data-ga-category="FacebookImage" data-ga-action="Share"></span>
+        <span class="article-pic-soc-tw js-button" data-provider="tw"  data-ga-category="TwitterImage" data-ga-action="Share"></span>
+        <span class="article-pic-soc-pin js-button" data-provider="pin"  data-ga-category="PinterestImage" data-ga-action="Share"></span>
+    </span>
+</div>        </div>
+    </div>
+</main>
+<div class="footer-container">
+    <footer class="footer">
+        <div class="footer-inner" style="width:100%;">
+            <nav class="footer-info-links">
+                <ul>
+                                            <li><a href="/article/how-we-make-bright-side-83405/">About Bright Side</a></li>
+                                            <li><a href="/article/vacancy-freelance-writer-for-bright-side-83455/">Vacancy</a></li>
+                                            <li><a href="https://thesoul-publishing.com/#contacts">Contact us</a></li>
+                                            <li><a href="/article/copyright-policy-117605/">Copyright policy</a></li>
+                                            <li><a href="/privacy/">Privacy policy</a></li>
+                                    </ul>
+
+                <ul class="footer-social">
+                    <li><a href="https://www.facebook.com/brightside" class="fb" title="Facebook" target="_blank"><img src="//iface.brightside.me/@/AdMeCommon/Layouts/i/i11.png" alt="Facebook"></a></li>
+                    <li><a href="https://twitter.com/bright_side_me" class="tw" title="Twitter" target="_blank"><img src="//iface.brightside.me/@/AdMeCommon/Layouts/i/i11.png" alt="Twitter"></a></li>
+                    <li><a href="/rss/" class="rss" title="RSS"><img src="//iface.brightside.me/@/AdMeCommon/Layouts/i/i11.png" alt="RSS"></a></li>
+                </ul>
+            </nav>
+
+            <address class="copy" style="width:100%;">
+                © 2014–2017 <a href="https://thesoul-publishing.com" target="_blank" style="color:#fff; text-decoration:underline;">TheSoul Publishing</a>. All rights reserved. All materials on this site are copyrighted and may not be used unless authorized by the Bright Side.            </address>
+        </div>
+
+        <div class="counters">
+            <div class="counters-column">
+                <!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter31579283 = new Ya.Metrika({
+                    id:31579283,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true,
+                    trackHash:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/31579283" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->                <script>(function() {
+        var _fbq = window._fbq || (window._fbq = []);
+        if (!_fbq.loaded) {
+            var fbds = document.createElement('script');
+            fbds.async = true;
+            fbds.src = '//connect.facebook.net/en_US/fbds.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(fbds, s);
+            _fbq.loaded = true;
+        }
+        _fbq.push(['addPixelId', '1628999790718603']);
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', 'PixelInitialized', {}]);
+</script>
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=1628999790718603&amp;ev=PixelInitialized" /></noscript>                <!-- Begin comScore Tag -->
+<script>
+    var _comscore = _comscore || [];
+    _comscore.push({ c1: "2", c2: "19962933" });
+    (function() {
+        var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+        s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+        el.parentNode.insertBefore(s, el);
+    })();
+</script>
+<noscript>
+    <img src="https://sb.scorecardresearch.com/p?c1=2&c2=19962933&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore Tag -->                
+<script>
+    var pageLoadStart = Date.now();
+    var pageLinkClickOccured = false;
+
+    if (document.body.addEventListener) {
+        document.body.addEventListener("click", function(e) {
+            var target = e.target,
+                cntr = 0;
+
+            // определяем являлся ли клик кликом по ссылке
+            // при этом нужно учесть что внутри ссылок могут находиться картинки и прочие элементы
+            // для этого просматриваем родителей таргета с вложенностью 2, этого достаточно
+
+            while (target && target.tagName !== 'A' && cntr++ < 2) {
+                target = target.parentNode;
+                if (!target) { return; }
+            }
+
+            if (target) {
+                if (target.tagName == 'A') {
+                    if (target.origin == document.origin) {
+                        pageLinkClickOccured = true;
+                    }
+                }
+            }
+        });
+    }
+
+    function beforeOnloadTrackEvent () {
+        var pageLoadEnd = Date.now();
+        var timeDelta = Math.ceil((pageLoadEnd - pageLoadStart) / 1000);
+        var nonInteraction = true;
+
+        if (timeDelta > 15 && 15 > 0) {
+            nonInteraction = false;
+        }
+
+        if (AdMeCommon.Analytics && !pageLinkClickOccured) {
+            AdMeCommon.Analytics.event('Page', 'Unload', 'timeSpent', timeDelta, nonInteraction);
+        }
+    }
+
+    window.onbeforeunload=beforeOnloadTrackEvent;
+</script>            </div>
+        </div>
+    </footer>
+</div>
+<div id="fb-root"></div>
+
+<a href="#" class="scroll-top"></a>
+
+    <script type="text/javascript" src="//iface.brightside.me/assets/js-common-bf905f21ae93649d8a6b637b784534d95b3158de.js"></script>
+        <script type="text/javascript" src="//iface.brightside.me/assets/js-common-footer-bf905f21ae93649d8a6b637b784534d95b3158de.js"></script>
+    <!-- Designed by Pavel Radaev -->
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"24f0ec8ff0","applicationID":"15016628","transactionName":"Y1BRYhNRDUNTVEYLV1oaclUVWQxeHXZWL113Wl5bDl5McUBDWwFUURp6WAVVGx9BXlwFVFF0QUIIUw9V","queueTime":0,"applicationTime":47,"atts":"TxdGFFtLHhwQVhBYQ0lI","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

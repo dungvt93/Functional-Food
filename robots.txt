@@ -2,5 +2,4 @@ User-agent: *
 Disallow: /wp-admin/
 Disallow: /blog/
 Disallow: /category/
-Disallow: /department/
 Allow: /wp-admin/admin-ajax.php
